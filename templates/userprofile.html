@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>User Profile</h1>
+  <form method="POST" action="{{ url_for('userprofile') }}">
+    <div class="form-group">
+      <label for="first_name">First Name:</label>
+      <input type="text" class="form-control" id="first_name" name="first_name" required>
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name:</label>
+      <input type="text" class="form-control" id="last_name" name="last_name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone_number">Phone Number:</label>
+      <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+    </div>
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <select class="form-control" id="location" name="location" required>
+        <option value="" selected disabled>Please select your location</option>
+        <option value="Central and Western">Central and Western</option>
+        <option value="Eastern">Eastern</option>
+        <option value="Southern">Southern</option>
+        <option value="Wan Chai">Wan Chai</option>
+        <option value="Kowloon City">Kowloon City</option>
+        <option value="Kwun Tong">Kwun Tong</option>
+        <option value="Sham Shui Po">Sham Shui Po</option>
+        <option value="Wong Tai Sin">Wong Tai Sin</option>
+        <option value="Yau Tsim Mong">Yau Tsim Mong</option>
+        <option value="Islands">Islands</option>
+        <option value="Kwai Tsing">Kwai Tsing</option>
+        <option value="North">North</option>
+        <option value="Sai Kung">Sai Kung</option>
+        <option value="Sha Tin">Sha Tin</option>
+        <option value="Tai Po">Tai Po</option>
+        <option value="Tsuen Wan">Tsuen Wan</option>
+        <option value="Tuen Mun">Tuen Mun</option>
+        <option value="Yuen Long">Yuen Long</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="education">Education:</label>
+      <select class="form-control" id="education" name="education" required>
+        <option value="" selected disabled>Please select your highest academic qualification</option>
+        <option value="Secondary school or below">Secondary school or below</option>
+        <option value="Associate degree">Associate degree</option>
+        <option value="Bachelor's degree">Bachelor's degree</option>
+        <option value="Master's degree">Master's degree</option>
+        <option value="Doctorate degree">Doctorate degree</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+{% endblock %}
+
+
+

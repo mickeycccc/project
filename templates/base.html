@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('job_postings') }}">Job Postings</a></li>
+            <li><a href="{{ url_for('job_listing') }}">Job Listing</a></li>
+            <li><a href="{{ url_for('userprofile') }}">User Profile</a></li>
+            <li><a href="{{ url_for('listingprofile') }}">Listing Profile</a></li>
+            <li><a href="{{ url_for('QaA') }}">Q&A</a></li>
+            {% if 'user_id' in session %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>© 2023 Job Recruitment, Inc.</p>
+    </footer>
+</body>
+</html>
